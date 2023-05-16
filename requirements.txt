@@ -1,3 +1,9 @@
 pandas
 numpy
 requests
+flask
+flask-cors
+jsonify
+flask-restful
+flask-mysql
+PyMySQL

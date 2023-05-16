@@ -30,7 +30,7 @@ def post_data(df, table_name, endpoint, no_batches, no_tries):
     for batch in lst_df:
         no_tries = 1
         #We'll make three attemps to the API server
-        while no_tries < 3:
+        while no_tries <= 3:
             #With pickle we convert the dataframe into a byte-like string (base64 encode)
             batch_pickled = pickle.dumps(batch)
             batch_pickled_b64 = base64.b64encode(batch_pickled)
@@ -52,7 +52,8 @@ def post_data(df, table_name, endpoint, no_batches, no_tries):
                     #And they'll be added as well inside the "not_added" folder in a CSV file
                     else:
                         batch.to_csv("data/not_added/"+table_name+"/"+table_name+"("+cur_datetime+").csv", encoding="utf-8", mode='a', index=False, header=False)
-                        log_not_added_records(batch, table_name, "API service error, status code: "+str(response.status_code))
+                        json_response = response.json()
+                        log_not_added_records(batch, table_name, "API service error, status code: "+str(response.status_code)+". Message from server: "+str(json_response['message']))
             except Exception as e:
                 no_tries += 1
                 if no_tries < 3:
