@@ -53,12 +53,13 @@ python3 analyze_folder.py
 
 The read_csv_files.py script will be automatically executed (if new files are added in the folder mentioned above) which validates, and sends the data to the API server. All missing or invalid records will be logged in a generated log.txt file. Moreover, they will be moved in the **data/not_added** folder as CSV file (for each table)
 
+#### Generating daily backups
 To generate **daily backups** just simply execute the following command, which will generate (for each table) AVRO files inside the **backups** folder:
 
 ```bash
 python3 periodic_backups.py
 ```
-
+#### Restore from specific backups
 In order to restore a specific table from the generated backups, the following command must be executed, and the only argument (avro_file_path) represents the location of the AVRO file:
 
 ```bash
