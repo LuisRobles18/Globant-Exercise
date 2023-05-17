@@ -11,7 +11,7 @@ This project contains the following features, which solves the problems describe
  - Inserting records from the CSV files into a SQL database located in the cloud
  - Daily backups stored in AVRO format (for each table)
  - Ability to restore certain tables from AVRO files (for each table)
- - **NOTE: ** The API REST service sends its data in an encoded format, which ensures confidentiality, and integrity (along with the backup/restore features).
+ - **NOTE:** The API REST service sends its data in an encoded format, which ensures confidentiality, and integrity (along with the backup/restore features).
 
 
 ## Requirements
