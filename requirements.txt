@@ -9,3 +9,5 @@ flask-mysql
 PyMySQL
 celery
 watchdog
+fastavro
+mysql-connector-python
