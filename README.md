@@ -60,7 +60,7 @@ To generate **daily backups** just simply execute the following command, which w
 python3 periodic_backups.py
 ```
 #### Restore from specific backups
-In order to restore a specific table from the generated backups, the following command must be executed, and the only argument (avro_file_path) represents the location of the AVRO file:
+In order to restore a specific table from the generated backups, the following command must be executed, and the only argument (avro_file_path) represents the location of the AVRO file (from a specific table):
 
 ```bash
 python3 restore_backup.py avro_file_path
