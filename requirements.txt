@@ -7,3 +7,5 @@ jsonify
 flask-restful
 flask-mysql
 PyMySQL
+celery
+watchdog
